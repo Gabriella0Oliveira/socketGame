@@ -7,31 +7,32 @@ O jogo está implementado em linguagem Python utilizando o protocolo de comunica
 
 ### 📌Sobre este projeto:
 1.  Software
-    - [Objetivos e motivações.](#)
-    - [Escolhendo o protocolo.](#)
-    - [Estrutura do código](#Estrutura-do-código.)
+    - [Objetivos](#objetivos)
+    - [Protocolo](#protocolo)
+    - [Código](#código)
 2.  Protocolo usado na camada de aplicação
-    - [Estados](#)
-    - [Mensagens](#)
-    - [Eventos](#)
+    - [Estados](#estados)
+    - [Mensagens](#mensagens)
+    - [Eventos](#eventos)
 
 3. Como jogar
-   - [Requisitos](#)
-   - [Instruções de instalação](#)
-   - [Controles](#)  
+   - [Requisitos](#requisitos)
+   - [Instruções](#instruções)
+   - [Controles](#controles)  
 
 
-![imagem](<Imagem do WhatsApp de 2023-12-04 à(s) 23.09.38_52090821.jpg>)
+![print](https://github.com/Gabriella0Oliveira/socketGame/assets/72841769/ff1a01d7-f9cf-45e8-bfe2-957ed29c0cb9)
+
 
 ## Software 🛠
 Entendendo um pouco sobre o funcionamento do código e a sua estrutura.
-### Objetivos e motivações.
+### Objetivos
 O jogo de shooting "Space Invaders" é bem querido na comunidade gamer, optamos por criar uma versão ainda mais divertida e interativa utilizando uma conexão local para conectar dois jogadores. O principal foco, entretanto, foi o aprendizado dos conceitos abordados durante o estudo da disciplina de Redes. Principalmente o gereciamento da comunicação de dados entre um cliente e um servidor utilizando um protocolo apropriado. Desta maneira, é esperado que o software seja capaz de lidar com o envio e recebimentos de dados atualizando a execução do jogo nas partes envolvidas a cada evento ocorrido. 
 
-### Escolhendo o protocolo.
+### Protocolo.
 O protocolo utilizado na implementação foi o UDP (User Datagram Protocol). Durante a escolha buscamos analisar as considerações específicas do projeto. O UDP foi preferido devido à sua simplicidade e eficiência em ambientes nos quais a perda ocasional de pacotes é aceitável. No contexto de um jogo multiplayer, a velocidade de transmissão é crucial para manter a jogabilidade fluida em tempo real, e o UDP, por ser um protocolo não orientado a conexão e de baixa sobrecarga, permite uma comunicação mais rápida do que protocolos mais robustos, como o TCP. Embora o UDP não garanta a entrega de pacotes, percebemos que isso não afeta em grande escala a jogabilidade do jogo.
 
-### Estrutura do código.
+### Código.
 O código está dividido em dois arquivos:
 - `server.py` lida com a implementação do servidor.
 - `client.py` lida com a implementação do cliente. 
@@ -49,7 +50,7 @@ Os cliente enviam informações ao servidor sobre seus eventos como: movimentaç
 
 - O jogo possui alguns feedbacks visuais e sonoros, como: Um inimigo ao morrer dispara uma animação de explosão. O jogo ao ser iniciado reproduz uma música de fundo. 
  
-## Sobre o protocolo usado na camada de aplicação
+## Sobre o protocolo usado na camada de aplicação 🌐 
 O protocolo na camada de aplicação se baseia em uma comunicação cliente-servidor utilizando sockets UDP em Python. Cada entidade (cliente e servidor) possui um socket dedicado para a troca de mensagens. As informações são transmitidas na forma de objetos serializados, empregando a biblioteca `Pickle` ou strings conforme o contexto.
 
 
@@ -123,7 +124,7 @@ utilizando a variável server_address = ('192.168.0.104', 5555).
 ```
 - Vinculação do Socket à Porta (Apenas Servidor):
 ```
-O servidor vincula o socket criado ao endereço escolhido com SERVER_SOCKET.bin (SERVER_ADDRESS).
+O servidor vincula o socket criado ao endereço escolhido com SERVER_SOCKET.bind(SERVER_ADDRESS).
 ```
 - Envio de Dados do Cliente para o Servidor:
 ```
@@ -175,7 +176,7 @@ Para ter acesso ao jogo é necessário que você faça o download de todos os ar
 Certifique-se de que todos os arquivos estão localizados em uma única pasta e que a sua máquina possui o `Python` instalado. 
 - [Python](https://www.python.org/downloads/)
 
-### Instruções de Instalação
+### Instruções
 Ao abrir os arquivos client.py e server.py altere o endereço IP em ambos códigos para o ip da máquina que irá ser o host do jogo (servidor). Não se esqueça que ambas máquinas precisam estar na mesma rede. 
 
 ```
@@ -187,13 +188,15 @@ Para encontrar o seu ip você pode utilizar esses comandos:
 ```
 ipconfig
 ```
-![Alt text](image.png)
+![image](https://github.com/Gabriella0Oliveira/socketGame/assets/72841769/bf282697-567b-4ced-8453-16ada713e48c)
+
 
 - Ambiente Linux
 ```
 ifconfig
 ```
-![Alt text](image-1.png)
+![image](https://github.com/Gabriella0Oliveira/socketGame/assets/72841769/83669be7-0ad4-468d-806b-251f8c083333)
+
 
 #### IPs configurados
 Agora você pode executar o server.py em sua máquina. E intruir para que seus parceiros de jogo executem o client.py. 
@@ -201,10 +204,11 @@ Agora você pode executar o server.py em sua máquina. E intruir para que seus p
 
 ### Controles 
 
-Para movimentar a nave basta utilizar as teclas de direção e para atirar utilize a barra de espaço.  
+Para movimentar a nave basta utilizar as **teclas de direção** e para atirar utilize a **barra de espaço**.  
 
+![image](https://github.com/Gabriella0Oliveira/socketGame/assets/72841769/1b1bae44-036c-4b5b-bd00-31405958fd63)
 
 
 ### Feito por:  
 >☕ [Gabriella Oliveira](https://github.com/Gabriella0Oliveira)  
->☕ [Diêgo Farias](https://github.com/Gabriella0Oliveira)
+>☕ [Diêgo Farias](https://github.com/Difarias)
